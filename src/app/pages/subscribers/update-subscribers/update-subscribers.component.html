@@ -1,0 +1,54 @@
+<mat-dialog-content class="form-wrapper">
+  <form class="form-add" [formGroup]="subscriberForm" (ngSubmit)="onUpdateSubscriber()">    
+    <div class="fullname-container">
+      <mat-form-field appearance="fill" class="field-fullname">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="fullname">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="field-tel">
+        <mat-label>Tel.</mat-label>
+        <input matInput formControlName="tel" prefix="+7" mask="(000)-000-00-00" [showMaskTyped]= "true">
+      </mat-form-field>
+    </div>
+    <div formGroupName="address" class="address-container">
+      <mat-form-field appearance="fill" class="field-city">
+        <mat-label>City</mat-label>
+        <input matInput formControlName="city">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="field-street">
+        <mat-label>Street</mat-label>
+        <input matInput formControlName="street">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="field-number">
+        <mat-label>#</mat-label>
+        <input matInput formControlName="number">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="field-apartment">
+        <mat-label>Apartment</mat-label>
+        <input matInput formControlName="apartment">
+      </mat-form-field>
+    </div>
+    <mat-form-field appearance="fill" class="field-description">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" class="field-description__text"></textarea>
+    </mat-form-field>
+    <div class="add-button">
+      <div>
+        <div *ngIf="subscriberForm.controls['fullname']?.touched && !subscriberForm.controls['fullname']?.valid">
+          <div *ngIf="subscriberForm.controls['fullname']?.errors?.['required']" class="errors">
+            *Fullname is required
+          </div>
+        </div>
+        <div *ngIf="subscriberForm.controls['tel']?.touched && !subscriberForm.controls['tel']?.valid">
+          <div *ngIf="subscriberForm.controls['tel']?.errors?.['required']" class="errors">
+            *Telephone is required
+          </div>
+          <div *ngIf="subscriberForm.controls['tel']?.errors?.['pattern']" class="errors">
+            *Incorrect telephone entry
+          </div>
+        </div>
+      </div>
+      <button type="submit" mat-raised-button color="primary" mat-dialog-close [disabled]="!subscriberForm.valid">Update Subscriber</button>
+    </div>
+  </form>
+</mat-dialog-content>

@@ -1,0 +1,25 @@
+<mat-toolbar class="toolbar" >
+  <div class="toolbar__button-home">
+    <button mat-fab><span class="material-icons home" [routerLink]="['home']">home</span></button>
+  </div>
+  <div class="toolbar__button-user">
+    <button mat-button [matMenuTriggerFor]="menu"><span class="material-icons user">person</span></button>
+    <mat-menu #menu="matMenu" class="person" xPosition="before" >
+      <div *ngFor="let subscriber of subscriber$ | async" class="person-wrapper">
+        <div class="role"><span>{{subscriber.role}}</span></div>
+        <div class="info-person">
+          <div class="info-person__fullname">
+            <span><strong>Fullname:</strong> {{subscriber.fullname}}</span>
+          </div>
+          <div class="info-person__email">
+            <span><strong>Email:</strong> {{subscriber.login?.email}}</span>
+          </div>
+          <div class="info-person__tel">
+            <span><strong>Tel:</strong> +7{{subscriber.tel}}</span>
+          </div>
+        </div>
+      </div>      
+    </mat-menu>
+    <button mat-button routerLink="/login"><span class="material-icons user-out">logout</span></button>
+  </div> 
+</mat-toolbar>

@@ -1,0 +1,119 @@
+.subscriber-wrapper {
+  margin-left: 60px;
+  width: 1080px;
+}
+.subscriber-wrapper .subscriber-top {
+  display: flex;
+  justify-content: space-between;
+}
+.subscriber-wrapper .subscriber-top__search {
+  width: 500px;
+}
+.subscriber-wrapper .subscriber-top__search .field-search {
+  width: 100%;
+}
+.subscriber-wrapper .subscriber-top__add .add-button {
+  margin-top: 5px;
+  color: #fff;
+  background-color: #334955;
+}
+.subscriber-wrapper .table-container {
+  width: 100%;
+  height: 823px;
+  overflow: auto;
+}
+.subscriber-wrapper .table-container::-webkit-scrollbar {
+  width: 0;
+}
+.subscriber-wrapper .table-container .table-subscriber {
+  width: 100%;
+  box-shadow: none;
+}
+.subscriber-wrapper .table-container .table-subscriber .column-name {
+  min-width: 491px;
+  max-width: 491px;
+  word-wrap: break-word;
+  table-layout: fixed;
+}
+.subscriber-wrapper .table-container .table-subscriber .column-tel {
+  padding-left: 10px;
+  min-width: 275px;
+  max-width: 275px;
+  word-wrap: break-word;
+  table-layout: fixed;
+}
+.subscriber-wrapper .table-container .table-subscriber .column-orders {
+  min-width: 100px;
+  max-width: 100px;
+  word-wrap: break-word;
+  table-layout: fixed;
+  text-align: center;
+}
+.subscriber-wrapper .table-container .table-subscriber .column-orders .list-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.subscriber-wrapper .table-container .table-subscriber .column-orders .list-wrapper .button-list {
+  font-size: 26px;
+  color: #334955;
+}
+.subscriber-wrapper .table-container .table-subscriber .column-orders .list-wrapper .badge {
+  padding-top: 10px;
+  margin-left: -5px;
+}
+.subscriber-wrapper .table-container .table-subscriber .column-action {
+  width: 156px;
+  text-align: center;
+}
+.subscriber-wrapper .table-container .table-subscriber .column-action .button-edit {
+  font-size: 24px;
+  color: #334955;
+}
+.subscriber-wrapper .table-container .table-subscriber .column-action .button-delete {
+  font-size: 24px;
+}
+.subscriber-wrapper .table-container .table-subscriber .info:hover {
+  background: linear-gradient(0deg, rgba(247, 149, 0, 0.8) 3%, rgba(249, 170, 51, 0) 5%);
+  cursor: pointer;
+}
+::ng-deep.mat-menu-panel {
+  min-width: 400px !important;
+}
+::ng-deep.mat-menu-panel .delete-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+::ng-deep.mat-menu-panel .delete-wrapper .delete-title {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+::ng-deep.mat-menu-panel .delete-wrapper .delete-button {
+  width: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+::ng-deep.mat-menu-panel .delete-wrapper .delete-button__done {
+  background-color: #33FFCC;
+}
+::ng-deep.mat-menu-panel .delete-wrapper .delete-button__done .icon-done {
+  font-size: 24px;
+}
+::ng-deep.mat-menu-panel .delete-wrapper .delete-button__close {
+  margin-left: 10px;
+  background-color: #FF6666;
+}
+::ng-deep.mat-menu-panel .delete-wrapper .delete-button__close .icon-close {
+  font-size: 24px;
+}
+::ng-deep .mat-tooltip {
+  max-width: 400px !important;
+  word-wrap: break-word;
+  table-layout: fixed;
+  background-color: #f9aa33;
+  font-size: 12px;
+  color: #334955 !important;
+}

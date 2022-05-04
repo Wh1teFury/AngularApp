@@ -1,0 +1,29 @@
+<div class="orders-wrapper">
+  <div class="orders-header">
+    <h1 class="orders-title">Orders</h1>
+  </div>
+  <div class="order-list">
+    <ul *ngFor="let order of ordersCreated$ | async">
+      <li (click)="onInfo(order.id, $event)">        
+          <div class="name-container">
+            <div><span [ngStyle]="{'color': getColor(order.status)}" class="material-icons status">circle</span></div>
+            <div class="item-name">{{order.name}}</div> 
+          </div>      
+          <div><button mat-icon-button mat-dialog-close >
+            <span class="material-icons item-description" >description</span></button>
+          </div>        
+      </li>
+    </ul>
+    <ul *ngFor="let order of ordersCompleted$ | async">
+      <li (click)="onInfo(order.id, $event)">
+          <div class="name-container">
+            <div><span [ngStyle]="{'color': getColor(order.status)}" class="material-icons status">circle</span></div>
+            <div class="item-name">{{order.name}}</div> 
+          </div>      
+          <div><button mat-icon-button mat-dialog-close >
+            <span class="material-icons item-description">description</span></button>
+          </div>       
+      </li>
+    </ul>
+  </div>
+</div>

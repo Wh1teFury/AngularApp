@@ -1,0 +1,53 @@
+<mat-dialog-content class="info-wrapper">
+  <mat-tab-group mat-align-tabs="center" animationDuration="0ms">
+    <mat-tab label="Subscriber">
+      <div class="subscriber">
+        <div class="subscriber-date">
+          <span>{{data.date}}</span>
+        </div>
+        <div class="subscriber-name">
+          <h2>{{data.fullname}}</h2>         
+        </div>
+        <div class="subscriber-info">
+            <div class="subscriber-info__address">
+              <div><strong>Address:</strong>
+                {{data.address.city}}, str.{{data.address.street}},{{data.address.number}}, apt.{{data.address.apartment}}</div>
+            </div>
+            <div class="subscriber-info__tel"><strong>Tel.:</strong> {{data.tel | tel}}</div>
+            <div class="subscriber-info__description">
+              <p><strong>Description:</strong></p>
+              <div>{{data.description}}</div>
+            </div>
+        </div>
+      </div>                  
+    </mat-tab>
+    <mat-tab label="Orders">
+      <div class="orders-wrapper">
+        <div class="order-list">
+          <ul *ngFor="let order of ordersCreated$ | async">
+            <li (click)="onInfo(order.id, $event)">        
+                <div class="name-container">
+                  <div><span [ngStyle]="{'color': getColor(order.status)}" class="material-icons status">circle</span></div>
+                  <div class="item-name">{{order.name}}</div> 
+                </div>      
+                <div><button mat-icon-button mat-dialog-close >
+                  <span class="material-icons item-description" >description</span></button>
+                </div>        
+            </li>
+          </ul>
+          <ul *ngFor="let order of ordersCompleted$ | async">
+            <li (click)="onInfo(order.id, $event)">
+                <div class="name-container">
+                  <div><span [ngStyle]="{'color': getColor(order.status)}" class="material-icons status">circle</span></div>
+                  <div class="item-name">{{order.name}}</div> 
+                </div>      
+                <div><button mat-icon-button mat-dialog-close >
+                  <span class="material-icons item-description">description</span></button>
+                </div>       
+            </li>
+          </ul>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>  
+</mat-dialog-content>

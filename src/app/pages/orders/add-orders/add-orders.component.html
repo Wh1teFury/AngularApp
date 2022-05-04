@@ -1,0 +1,81 @@
+<mat-dialog-content>
+  <form class="form-order" [formGroup]="orderForm" (ngSubmit)="onAddOrder()">
+    <mat-tab-group animationDuration="0ms" mat-align-tabs="center">
+      <mat-tab label="Order">
+        <div class="order-content">
+          <mat-form-field appearance="fill" class="field-name">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name">
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="field-subscriber" *ngIf="allow">
+            <mat-label>Subscribers</mat-label>
+            <input matInput
+                   #inputSub
+                   aria-label="Subscribers"
+                   [matAutocomplete]="auto"
+                   formControlName="subscribersId"
+                   (keyup)="onSearchSubscriber(inputSub.value)">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+              <mat-option *ngFor="let subscriber of sourceSubscriber$ | async" [value]="subscriber">
+              <span [innerHTML]= "subscriber.fullname | highlighter: inputSub.value"></span> /
+              <span [innerHTML]= "subscriber.tel | highlighter: inputSub.value | tel"></span>
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="field-description">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description" class="field-description__text"></textarea>
+          </mat-form-field>
+        </div>
+      </mat-tab>
+      <mat-tab label="Services">
+        <div class="service-top">
+          <mat-form-field class="field-search">
+            <input #input matInput (keyup)="onSearchService(input.value)" placeholder="Search">
+          </mat-form-field>
+        </div>
+        <div class="table-container">
+          <table mat-table [dataSource]="element" class="mat-elevation-z8 table-service" *ngIf = 'sourceService$ | async as element'>
+            <ng-container  matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef class="column-name"> Name </th>
+              <td mat-cell *matCellDef="let element" class="column-name" [innerHTML]="element.name | highlighter: input.value"></td>
+            </ng-container>
+            <ng-container matColumnDef="select">
+              <th mat-header-cell *matHeaderCellDef>
+                <mat-checkbox (change)="$event ? masterToggle() : null"
+                              [checked]="selection.hasValue() && isAllSelected()"
+                              [indeterminate]="selection.hasValue() && !isAllSelected()"
+                              [aria-label]="checkboxLabel()">
+                </mat-checkbox>
+              </th>
+              <td mat-cell *matCellDef="let row">
+                <mat-checkbox (click)="$event.stopPropagation()"
+                              (change)="$event ? selection.toggle(row) : null"
+                              [checked]="selection.isSelected(row)"
+                              [aria-label]="checkboxLabel(row)">
+                </mat-checkbox>
+              </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>  
+      </mat-tab>
+    </mat-tab-group>
+    <div class="add-button">
+      <div>
+        <div *ngIf="orderForm.controls['name']?.touched && !orderForm.controls['name']?.valid">
+          <div *ngIf="orderForm.controls['name']?.errors?.['required']" class="errors">
+            *Name is required
+          </div>
+        </div>
+        <div *ngIf="orderForm.controls['subscribersId']?.touched && !orderForm.controls['subscribersId']?.valid">
+          <div *ngIf="orderForm.controls['subscribersId']?.errors?.['required']" class="errors">
+            *Subscriber is required
+          </div>
+        </div>
+      </div>
+      <button type="submit" mat-raised-button color="primary" mat-dialog-close [disabled]="!orderForm.valid">Add Order</button>
+    </div>
+  </form>
+</mat-dialog-content>

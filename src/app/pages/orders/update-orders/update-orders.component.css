@@ -1,0 +1,56 @@
+.form-order {
+  width: 600px;
+}
+.form-order .order-content {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-order .order-content .field-name,
+.form-order .order-content .field-subscriber,
+.form-order .order-content .field-status {
+  width: 100%;
+}
+.form-order .order-content .field-description {
+  width: 100%;
+}
+.form-order .order-content .field-description__text {
+  max-height: 260px;
+  min-height: 80px;
+}
+.form-order .order-content .field-description__text::-webkit-scrollbar {
+  width: 0;
+}
+.form-order .service-top {
+  width: 100%;
+}
+.form-order .service-top .field-search {
+  width: 100%;
+  margin-top: 15px;
+}
+.form-order .table-container {
+  width: 100%;
+}
+.form-order .table-container .table-service {
+  width: 100%;
+  box-shadow: none;
+}
+.form-order .table-container .table-service .column-name {
+  min-width: 500px;
+  max-width: 500px;
+  word-wrap: break-word;
+  table-layout: fixed;
+}
+.form-order .add-button {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.form-order .add-button .errors {
+  margin-left: 15px;
+  color: #FF3333;
+}
+.form-order .add-button button {
+  background-color: #334955;
+}

@@ -1,0 +1,35 @@
+.form-wrapper {
+  width: 650px;
+}
+.form-wrapper .form-add .field-name {
+  width: 100%;
+}
+.form-wrapper .form-add .field-description {
+  width: 100%;
+}
+.form-wrapper .form-add .field-description__text {
+  max-height: 300px;
+  min-height: 80px;
+}
+.form-wrapper .form-add .field-description__text::-webkit-scrollbar {
+  width: 0;
+}
+.form-wrapper .form-add .add-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+}
+.form-wrapper .form-add .add-button .errors {
+  margin-left: 15px;
+  color: #FF3333;
+}
+.form-wrapper .form-add .add-button .button-wrapper {
+  width: 220px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-wrapper .form-add .add-button .button-wrapper button {
+  background-color: #334955;
+}

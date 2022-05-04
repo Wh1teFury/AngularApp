@@ -1,0 +1,60 @@
+<div class="info-wrapper">
+  <mat-card class="card" *ngFor="let order of order$ | async">
+    <div class="info-header">
+      <div class="info-header__name"><span>{{order.name}},<small class="status">{{order.status}}</small></span></div>
+      <div class="info-header__action">
+        <button mat-icon-button [disabled]="onDisabled(order.status)" (click)="onUpdateOrder(order, $event)"><span class="material-icons button-edit" *ngIf="allow">edit</span></button>
+        <button mat-icon-button color="warn" [matMenuTriggerFor]="menu"><span class="material-icons button-delete" *ngIf="allow">delete</span></button>
+        <mat-menu #menu="matMenu" class="delete" xPosition="before">
+          <div class="delete-wrapper">
+            <div class="delete-title">Are you sure you want to delete?</div>
+            <div class="delete-button">
+              <button
+                mat-icon-button
+                class="delete-button__done"
+                (click)="onDeleteOrder(order)"
+                [mat-dialog-close]="true">
+                <span class="material-icons icon-done">done</span>
+              </button>
+              <button
+                mat-icon-button
+                class="delete-button__close"
+                mat-dialog-close>
+                <span class="material-icons  icon-close">close</span>
+              </button>
+            </div>
+          </div>
+        </mat-menu>
+      </div>
+    </div>
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="Order">
+        <div class="order-container">
+          <div class="order-info">
+            <div class="order-info__date">
+              <div class="date"><strong>Date of creation:</strong>  {{order.dateOfCreation}}</div>
+              <div class="date"> <strong>Estimated completion date:</strong> {{order.estimatedDate}}</div>
+              <div class="date"> <strong>Actual completion date:</strong> {{order.actualDate}}</div>
+            </div>
+            <div class="order-info__subscriber" (click)="onInfoSubscriber(order, $event)">
+              <div class="subscriber-name"><span>{{order.subscriberName}}</span></div>
+              <div><button mat-mini-fab class="subscriber-button"><span class="material-icons person">person</span></button></div>              
+            </div>
+          </div>
+          <div class="description">
+            <div><strong>Description:</strong> {{order.description}}</div>          
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Services">
+        <div class="service-wrapper">
+          <div class="service-list">
+            <mat-list role="list" *ngFor="let service of order.serviceId" class="list">
+              <mat-list-item role="listitem">{{service.name}}</mat-list-item>
+            </mat-list>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>

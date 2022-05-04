@@ -1,0 +1,7 @@
+<div class="navbar-wrapper">
+    <nav mat-tab-nav-bar >
+      <a mat-tab-link [routerLink]="['services']" routerLinkActive="active"> Services </a>
+      <a mat-tab-link [routerLink]="['subscribers']" routerLinkActive="active" *ngIf="allow"> Subscribers </a>
+      <a mat-tab-link [routerLink]="['orders']" routerLinkActive="active"> Orders </a>
+    </nav> 
+</div>

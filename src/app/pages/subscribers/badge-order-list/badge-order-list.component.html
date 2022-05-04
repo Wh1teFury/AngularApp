@@ -1,0 +1,3 @@
+<div *ngIf="ordersCreated$ | async as orders">
+  <span [matBadge]="orders.length" [matBadgeHidden]="onHidden(orders.length)"></span>
+</div>

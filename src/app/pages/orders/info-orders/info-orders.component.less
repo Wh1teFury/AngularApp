@@ -1,0 +1,138 @@
+.info-wrapper {
+  margin-left: 60px;
+  width: 1080px;
+  .card {
+    min-height: 250px;
+    .info-header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid #f9aa33;
+      &__name {
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 8px;
+        span {
+          color: #334955;
+          font-size: 24px;
+          margin-left: 15px;
+        }
+        .status {
+          margin-left: 5px;
+          font-size: 15px;
+        }
+      }
+      &__action {
+        .button-edit {
+          color: #334955;
+          font-size: 24px;
+        }
+        .button-delete {
+          font-size: 24px;
+        }
+      }    
+    }
+    .order-container {
+      width: 100%;
+      font-size: 16px;
+      margin-top: 10px;
+      max-height: 722px;
+      .order-info {
+        display: flex;
+        justify-content: space-between;
+        &__date {
+          margin-top: 7px;
+          .date {
+            margin-top: 5px;
+          }
+        }
+        &__subscriber {
+          margin-right: 10px;
+          height: 40px;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          .subscriber-name {
+            margin-right: 10px;
+          }
+          .subscriber-button {
+            background-color: inherit;
+            color:#f9aa33;
+            .person {
+              font-size: 30px;
+              margin-top: -5px;
+            }
+          }
+          &:hover {
+            cursor: pointer;
+            .subscriber-name {
+              color:#f9aa33;
+            }
+            .subscriber-button {
+              background-color: #f9aa33;
+              color:#334955;
+              .person {
+                font-size: 30px;
+                margin-top: -5px;
+              }
+            }
+          }
+        }
+      }
+      .description {
+        margin-top: 5px;
+        word-wrap:break-word;
+      }
+    }  
+    .service-wrapper {
+      width: 100%;
+      max-height: 722px;
+      .service-list {
+        width: 100%;
+        overflow: auto;
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+      }
+    }
+  }
+}
+::ng-deep.mat-menu-panel.delete {
+  margin-top: 10px;
+  min-width: 400px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .delete-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .delete-title {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+    }
+    .delete-button {
+      width: 100px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      &__done {
+        background-color: #33FFCC;
+        .icon-done {
+          font-size: 24px;
+        }
+      }
+      &__close {
+        margin-left: 10px;
+        background-color: #FF6666;
+        .icon-close {
+          font-size: 24px;
+        }
+      }
+    }
+  } 
+}
+.mat-list-item {
+  height: 30px !important;
+}

@@ -1,0 +1,60 @@
+.toolbar {
+  margin-top: 10px;
+  height: 45px;
+  background-color: #334955;
+  border-radius: 20px 15px 15px 20px;
+  justify-content: space-between;
+  &__button-home {
+    margin-left: -18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background-color: #FFFAFA;
+    border-radius: 35px ;
+    .mat-fab {
+      background-color: #f9aa33;
+      .home {
+        color: #000;
+        margin-top: -7px;
+      }   
+    }
+  }
+  &__button-user {
+    .mat-button {
+      .user {
+        color: #fff;
+      }
+    }
+    .user-out {
+      color:#fff;
+      font-size: 30px;
+    }
+  }
+}
+::ng-deep.mat-menu-panel.person {
+  margin-top: 5px;
+  min-width: 200px !important;
+  max-width: 600px !important;
+  .person-wrapper {
+    .role {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      span {
+        margin-right: 10px;
+      }
+    }
+    .info-person {
+      &__fullname,
+      &__email,
+      &__tel {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        font-size: 16px;
+      }
+    }
+  }
+}

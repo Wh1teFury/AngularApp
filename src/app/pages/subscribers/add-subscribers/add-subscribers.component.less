@@ -1,0 +1,50 @@
+.form-wrapper{
+  width: 1000px;
+  .form-add {
+    .fullname-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 820px;
+      .field-fullname {
+        width: 500px;
+      }
+      .field-tel {
+        width: 300px;
+      }
+    }
+    .address-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .field-city, .field-street {
+        width: 370px;
+      }
+      .field-number, .field-apartment {
+        width: 100px;
+      }
+    }
+    .field-description {
+      width: 100%;
+      &__text {
+        max-height: 300px;
+        min-height: 80px;
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+      }
+    }
+    .add-button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .errors {
+        margin-left: 15px;
+        color: #FF3333
+      }
+      button {
+        background-color: #334955;
+      }
+    }
+  }
+}

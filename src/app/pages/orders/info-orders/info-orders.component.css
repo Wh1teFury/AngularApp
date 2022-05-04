@@ -1,0 +1,136 @@
+.info-wrapper {
+  margin-left: 60px;
+  width: 1080px;
+}
+.info-wrapper .card {
+  min-height: 250px;
+}
+.info-wrapper .card .info-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #f9aa33;
+}
+.info-wrapper .card .info-header__name {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 8px;
+}
+.info-wrapper .card .info-header__name span {
+  color: #334955;
+  font-size: 24px;
+  margin-left: 15px;
+}
+.info-wrapper .card .info-header__name .status {
+  margin-left: 5px;
+  font-size: 15px;
+}
+.info-wrapper .card .info-header__action .button-edit {
+  color: #334955;
+  font-size: 24px;
+}
+.info-wrapper .card .info-header__action .button-delete {
+  font-size: 24px;
+}
+.info-wrapper .card .order-container {
+  width: 100%;
+  font-size: 16px;
+  margin-top: 10px;
+  max-height: 722px;
+}
+.info-wrapper .card .order-container .order-info {
+  display: flex;
+  justify-content: space-between;
+}
+.info-wrapper .card .order-container .order-info__date {
+  margin-top: 7px;
+}
+.info-wrapper .card .order-container .order-info__date .date {
+  margin-top: 5px;
+}
+.info-wrapper .card .order-container .order-info__subscriber {
+  margin-right: 10px;
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.info-wrapper .card .order-container .order-info__subscriber .subscriber-name {
+  margin-right: 10px;
+}
+.info-wrapper .card .order-container .order-info__subscriber .subscriber-button {
+  background-color: inherit;
+  color: #f9aa33;
+}
+.info-wrapper .card .order-container .order-info__subscriber .subscriber-button .person {
+  font-size: 30px;
+  margin-top: -5px;
+}
+.info-wrapper .card .order-container .order-info__subscriber:hover {
+  cursor: pointer;
+}
+.info-wrapper .card .order-container .order-info__subscriber:hover .subscriber-name {
+  color: #f9aa33;
+}
+.info-wrapper .card .order-container .order-info__subscriber:hover .subscriber-button {
+  background-color: #f9aa33;
+  color: #334955;
+}
+.info-wrapper .card .order-container .order-info__subscriber:hover .subscriber-button .person {
+  font-size: 30px;
+  margin-top: -5px;
+}
+.info-wrapper .card .order-container .description {
+  margin-top: 5px;
+  word-wrap: break-word;
+}
+.info-wrapper .card .service-wrapper {
+  width: 100%;
+  max-height: 722px;
+}
+.info-wrapper .card .service-wrapper .service-list {
+  width: 100%;
+  overflow: auto;
+}
+.info-wrapper .card .service-wrapper .service-list::-webkit-scrollbar {
+  width: 0;
+}
+::ng-deep.mat-menu-panel.delete {
+  margin-top: 10px;
+  min-width: 400px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+::ng-deep.mat-menu-panel.delete .delete-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+::ng-deep.mat-menu-panel.delete .delete-wrapper .delete-title {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+::ng-deep.mat-menu-panel.delete .delete-wrapper .delete-button {
+  width: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+::ng-deep.mat-menu-panel.delete .delete-wrapper .delete-button__done {
+  background-color: #33FFCC;
+}
+::ng-deep.mat-menu-panel.delete .delete-wrapper .delete-button__done .icon-done {
+  font-size: 24px;
+}
+::ng-deep.mat-menu-panel.delete .delete-wrapper .delete-button__close {
+  margin-left: 10px;
+  background-color: #FF6666;
+}
+::ng-deep.mat-menu-panel.delete .delete-wrapper .delete-button__close .icon-close {
+  font-size: 24px;
+}
+.mat-list-item {
+  height: 30px !important;
+}

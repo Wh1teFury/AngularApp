@@ -1,0 +1,37 @@
+.form-wrapper{
+  width: 650px;
+  .form-add {
+    .field-name {
+      width: 100%;
+    }
+    .field-description {
+      width: 100%;
+      &__text {
+        max-height: 300px;
+        min-height: 80px;
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+      }
+    }
+    .add-button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0;
+      .errors {
+        margin-left: 15px;
+        color: #FF3333
+      }
+      .button-wrapper {
+        width: 220px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button {
+          background-color: #334955;
+        }
+      }
+    }
+  }
+}

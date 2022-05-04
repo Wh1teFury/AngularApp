@@ -1,0 +1,136 @@
+.order-wrapper {
+  margin-left: 60px;
+  width: 1080px;
+}
+.order-wrapper .order-top {
+  display: flex;
+  justify-content: space-between;
+}
+.order-wrapper .order-top__search {
+  width: 500px;
+}
+.order-wrapper .order-top__search .field-search {
+  width: 100%;
+}
+.order-wrapper .order-top__add .add-button {
+  margin-top: 5px;
+  color: #fff;
+  background-color: #334955;
+}
+.order-wrapper .table-container {
+  width: 100%;
+  max-height: 678px;
+  overflow: auto;
+}
+.order-wrapper .table-container::-webkit-scrollbar {
+  width: 0;
+}
+.order-wrapper .table-container .table-order {
+  width: 100%;
+  box-shadow: none;
+}
+.order-wrapper .table-container .table-order .column-point {
+  min-width: 30px;
+  max-width: 30px;
+  text-align: left;
+}
+.order-wrapper .table-container .table-order .column-point .point {
+  padding-top: 5px;
+  font-size: 24px;
+}
+.order-wrapper .table-container .table-order .column-name {
+  min-width: 300px;
+  max-width: 300px;
+  word-wrap: break-word;
+  table-layout: fixed;
+}
+.order-wrapper .table-container .table-order .column-subscriber {
+  padding-left: 10px;
+  min-width: 300px;
+  max-width: 300px;
+  word-wrap: break-word;
+  table-layout: fixed;
+}
+.order-wrapper .table-container .table-order .column-status {
+  width: 140px;
+  text-align: center;
+}
+.order-wrapper .table-container .table-order .column-date {
+  width: 124px;
+  text-align: center;
+}
+.order-wrapper .table-container .table-order .column-action {
+  width: 128px;
+  text-align: center;
+}
+.order-wrapper .table-container .table-order .column-action .button-edit {
+  font-size: 24px;
+  color: #334955;
+}
+.order-wrapper .table-container .table-order .column-action .button-delete {
+  font-size: 24px;
+}
+.order-wrapper .table-container .table-order .info:hover {
+  background: linear-gradient(0deg, rgba(247, 149, 0, 0.8) 3%, rgba(249, 170, 51, 0) 5%);
+  cursor: pointer;
+}
+::ng-deep.mat-menu-panel.delete {
+  min-width: 400px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+::ng-deep.mat-menu-panel.delete .delete-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+::ng-deep.mat-menu-panel.delete .delete-wrapper .delete-title {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+::ng-deep.mat-menu-panel.delete .delete-wrapper .delete-button {
+  width: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+::ng-deep.mat-menu-panel.delete .delete-wrapper .delete-button__done {
+  background-color: #33FFCC;
+}
+::ng-deep.mat-menu-panel.delete .delete-wrapper .delete-button__done .icon-done {
+  font-size: 24px;
+}
+::ng-deep.mat-menu-panel.delete .delete-wrapper .delete-button__close {
+  margin-left: 10px;
+  background-color: #FF6666;
+}
+::ng-deep.mat-menu-panel.delete .delete-wrapper .delete-button__close .icon-close {
+  font-size: 24px;
+}
+::ng-deep.mat-menu-panel.status {
+  min-width: 112px !important;
+}
+::ng-deep.mat-menu-panel.date {
+  min-width: 280px !important;
+  max-width: 280px !important;
+}
+::ng-deep.mat-menu-panel.date .mat-menu-content {
+  margin: 0 15px 0 15px;
+  padding-bottom: 0;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+::ng-deep .mat-tooltip {
+  max-width: 400px !important;
+  word-wrap: break-word;
+  table-layout: fixed;
+  background-color: #f9aa33;
+  font-size: 12px;
+  color: #334955 !important;
+}

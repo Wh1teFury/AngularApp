@@ -1,0 +1,68 @@
+<div class="order-wrapper">
+  <div class="order-top"> 
+    <div class="order-top__search">
+      <mat-form-field class="field-search">
+        <input #input matInput (keyup)="onSearch(input.value)" placeholder="Search">
+      </mat-form-field>      
+    </div>
+    <div class="order-top__add">      
+      <button mat-raised-button class="add-button" (click)="onAddOrder($event)" >Add Order</button>
+    </div>
+  </div>
+  <div class="table-container">
+    <table mat-table matSort [dataSource]="element" class="mat-elevation-z8 table-order" *ngIf = 'source$ | async as element'>
+      <ng-container  matColumnDef=" ">
+        <th mat-header-cell *matHeaderCellDef  class="column-point">   </th>
+        <td mat-cell *matCellDef="let element" class="column-point" [routerLink]="[element.id]">
+          <span class="material-icons point" [ngStyle]="{'color': getColor(element.status)}">circle</span>
+        </td>
+      </ng-container>
+      <ng-container  matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="column-name"> Name </th>
+        <td mat-cell *matCellDef="let element" class="column-name" [routerLink]="[element.id]">
+          <span [matTooltip]="element.name" matTooltipPosition="right" [innerHTML]="element.name | slicetext : 'short' | highlighter: input.value"></span>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="subscriber">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="column-subscriber"> Subscriber </th>
+        <td mat-cell *matCellDef="let element" class="column-subscriber" [routerLink]="[element.id]">
+          <span [matTooltip]="element.subscriberName" matTooltipPosition="right" [innerHTML]="element.subscriberName | slicetext : 'short' | highlighter: input.value"></span>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="status">
+        <th mat-header-cell  *matHeaderCellDef class="column-status" [matMenuTriggerFor]="menuFilter"> Status </th>
+        <mat-menu #menuFilter="matMenu" class="status">
+          <button mat-menu-item (click)="onSortByStatus('Created')">Created</button>
+          <button mat-menu-item (click)="onSortByStatus('in Progress')">in Progress</button>
+          <button mat-menu-item (click)="onSortByStatus('Rejected')">Rejected</button>
+          <button mat-menu-item (click)="onSortByStatus('Completed')">Completed</button>
+          <button mat-menu-item (click)="onSortByStatus('Reset')">Reset</button>
+        </mat-menu>
+        <td mat-cell *matCellDef="let element" class="column-status" [routerLink]="[element.id]">
+          <span [matTooltip]="element.status" matTooltipPosition="right" [innerHTML]="element.status | highlighter: input.value"></span>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="date">
+        <th mat-header-cell  *matHeaderCellDef class="column-date" [matMenuTriggerFor]="menuFilterDate" > Date </th>
+        <mat-menu #menuFilterDate="matMenu" class="date" [overlapTrigger]="false">
+          <div (keydown.tab)="$event.stopPropagation()">
+            <mat-form-field appearance="fill">
+              <mat-label>Filter by date</mat-label>
+              <mat-date-range-input [formGroup]="rangeDate" [rangePicker]="picker" (click)="$event.stopPropagation(); false;">
+                <input matStartDate formControlName="after" placeholder="Start date" (dateInput)="onDate()">
+                <input matEndDate formControlName="before" placeholder="End date" (dateInput)="onDate()">
+              </mat-date-range-input>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+          </div>
+        </mat-menu>
+        <td mat-cell *matCellDef="let element" class="column-date" [routerLink]="[element.id]">
+          <span [matTooltip]="element.dateOfCreation" matTooltipPosition="right" [innerHTML]="element.dateOfCreation | highlighter: input.value"></span>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="info" matTooltip="info" matTooltipPosition="left"></tr>
+    </table>
+  </div>
+</div>

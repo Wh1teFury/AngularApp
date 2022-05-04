@@ -1,0 +1,27 @@
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-subscribers',
+  templateUrl: './subscribers.component.html',
+  styleUrls: ['./subscribers.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class SubscribersComponent implements OnInit {
+  role!: string;
+  allow: boolean = true;
+  admin: boolean = true;
+  users: boolean = true;
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.role = this.route.snapshot.parent?.params['id'].slice(0, 5);
+    if (this.role === 'users') {
+      this.admin = !this.admin;
+    }
+    if (this.role === 'guest') {
+      this.allow = !this.allow
+    }
+  }
+
+}

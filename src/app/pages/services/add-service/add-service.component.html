@@ -1,0 +1,27 @@
+<mat-dialog-content class="form-wrapper">
+  <form class="form-add" [formGroup]="serviceForm" (ngSubmit)="onAddService()">    
+      <mat-form-field appearance="fill" class="field-name">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field appearance="fill"  class="field-description">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description" class="field-description__text"></textarea>
+      </mat-form-field>
+      <div mat-dialog-actions class="add-button">
+        <div>
+          <div *ngIf="serviceForm.controls['name']?.touched && !serviceForm.controls['name']?.valid">
+            <div *ngIf="serviceForm.controls['name']?.errors?.['required']" class="errors">
+              *Name is required
+            </div>
+          </div>
+          <div *ngIf="serviceForm.controls['description']?.touched && !serviceForm.controls['description']?.valid">
+            <div *ngIf="serviceForm.controls['description']?.errors?.['required']" class="errors">
+              *Description is required
+            </div>
+          </div>
+        </div>
+        <button type="submit" mat-raised-button color="primary" mat-dialog-close [disabled]="!serviceForm.valid">Add Service</button>
+      </div>          
+  </form>
+</mat-dialog-content>

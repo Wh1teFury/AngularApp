@@ -1,0 +1,57 @@
+.form-wrapper {
+  width: 1000px;
+}
+.form-wrapper .form-add .fullname-container {
+  display: flex;
+  justify-content: space-between;
+  width: 820px;
+}
+.form-wrapper .form-add .fullname-container .field-fullname {
+  width: 500px;
+}
+.form-wrapper .form-add .fullname-container .field-tel {
+  width: 300px;
+}
+.form-wrapper .form-add .address-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-wrapper .form-add .address-container .field-city,
+.form-wrapper .form-add .address-container .field-street {
+  width: 370px;
+}
+.form-wrapper .form-add .address-container .field-number,
+.form-wrapper .form-add .address-container .field-apartment {
+  width: 100px;
+}
+.form-wrapper .form-add .tel-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.form-wrapper .form-add .tel-container .field-tel {
+  width: 300px;
+}
+.form-wrapper .form-add .field-description {
+  width: 100%;
+}
+.form-wrapper .form-add .field-description__text {
+  max-height: 300px;
+  min-height: 80px;
+}
+.form-wrapper .form-add .field-description__text::-webkit-scrollbar {
+  width: 0;
+}
+.form-wrapper .form-add .add-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-wrapper .form-add .add-button .errors {
+  margin-left: 15px;
+  color: #FF3333;
+}
+.form-wrapper .form-add .add-button button {
+  background-color: #334955;
+}

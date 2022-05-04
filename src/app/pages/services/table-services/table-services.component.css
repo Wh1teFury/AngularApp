@@ -1,0 +1,101 @@
+.service-wrapper {
+  margin-left: 60px;
+  width: 1080px;
+}
+.service-wrapper .service-top {
+  display: flex;
+  justify-content: space-between;
+}
+.service-wrapper .service-top__search {
+  width: 500px;
+}
+.service-wrapper .service-top__search .field-search {
+  width: 100%;
+}
+.service-wrapper .service-top__add .add-button {
+  margin-top: 5px;
+  color: #fff;
+  background-color: #334955;
+}
+.service-wrapper .table-container {
+  width: 100%;
+  height: 823px;
+  overflow: auto;
+}
+.service-wrapper .table-container::-webkit-scrollbar {
+  width: 0;
+}
+.service-wrapper .table-container .table-service {
+  width: 100%;
+  box-shadow: none;
+}
+.service-wrapper .table-container .table-service .column-name {
+  min-width: 300px;
+  max-width: 300px;
+  word-wrap: break-word;
+  table-layout: fixed;
+}
+.service-wrapper .table-container .table-service .column-description {
+  padding-left: 10px;
+  padding-right: 10px;
+  min-width: 495px;
+  max-width: 495px;
+  word-wrap: break-word;
+  table-layout: fixed;
+}
+.service-wrapper .table-container .table-service .column-activity {
+  width: 82px;
+  text-align: center;
+}
+.service-wrapper .table-container .table-service .column-action {
+  width: 135px;
+  text-align: center;
+}
+.service-wrapper .table-container .table-service .column-action .button-edit {
+  font-size: 24px;
+  color: #334955;
+}
+.service-wrapper .table-container .table-service .column-action .button-delete {
+  font-size: 24px;
+}
+::ng-deep.mat-menu-panel {
+  min-width: 400px !important;
+}
+::ng-deep.mat-menu-panel .delete-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+::ng-deep.mat-menu-panel .delete-wrapper .delete-title {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+::ng-deep.mat-menu-panel .delete-wrapper .delete-button {
+  width: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+::ng-deep.mat-menu-panel .delete-wrapper .delete-button__done {
+  background-color: #33FFCC;
+}
+::ng-deep.mat-menu-panel .delete-wrapper .delete-button__done .icon-done {
+  font-size: 24px;
+}
+::ng-deep.mat-menu-panel .delete-wrapper .delete-button__close {
+  margin-left: 10px;
+  background-color: #FF6666;
+}
+::ng-deep.mat-menu-panel .delete-wrapper .delete-button__close .icon-close {
+  font-size: 24px;
+}
+::ng-deep .mat-tooltip {
+  max-width: 400px !important;
+  word-wrap: break-word;
+  table-layout: fixed;
+  background-color: #f9aa33;
+  font-size: 12px;
+  color: #334955 !important;
+}
