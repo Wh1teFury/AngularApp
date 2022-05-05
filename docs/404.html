@@ -13,5 +13,9 @@
     <app-root></app-root>
   </div>  
 <script src="runtime.1acd0dd2e37aef07.js" type="module"></script><script src="polyfills.93282274adbfb654.js" type="module"></script><script src="main.5880975a619b601d.js" type="module"></script>
-
+<script>
+  const path = window.location.pathname.slice(1);
+  localStorage.setItem('path', path);
+  window.location.href='../';
+</script>
 </body></html>
