@@ -11,11 +11,8 @@ import { LoginComponent } from './shared/components/login/login.component';
 const tablesRoutes: Routes = [
   {
     path: '',
-    component: ServicesComponent
-  },
-  {
-    path: 'home',
-    component: ServicesComponent
+    redirectTo: 'services',
+    pathMatch: 'full'
   },
   {
     path: 'services',
