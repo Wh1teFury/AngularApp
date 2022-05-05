@@ -51,6 +51,11 @@ const routes: Routes = [
     component: MainComponent,
     canActivate: [AuthGuard],
     children: tablesRoutes
+  },
+  {
+    path: '**',
+    redirectTo: '/login',
+    pathMatch: 'full'
   }
 ];
 
